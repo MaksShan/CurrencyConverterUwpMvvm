@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="ConverterApp.Views.LoadDataPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ConverterApp"
+    xmlns:i="using:Microsoft.Xaml.Interactivity"
+    xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:vm="using:ConverterApp.ViewModels"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{StaticResource SharedViewModel}"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <i:Interaction.Behaviors>
+        <core:EventTriggerBehavior EventName="Loaded">
+            <core:EventTriggerBehavior.Actions>
+                <core:InvokeCommandAction Command="{Binding LoadDataCommand}"/>
+                <core:InvokeCommandAction Command="{Binding NavigateToConverterPageCommand}"/>
+            </core:EventTriggerBehavior.Actions>
+        </core:EventTriggerBehavior>
+    </i:Interaction.Behaviors>
+</Page>
